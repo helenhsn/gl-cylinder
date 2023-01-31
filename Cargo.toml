@@ -1,0 +1,13 @@
+[package]
+name = "hello_triangle"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+glfw = "0.48.0"
+gl = "0.14.0"
+mem = "0.5.0"
+cgmath = "0.18.0"
+libm = "0.2.6"
