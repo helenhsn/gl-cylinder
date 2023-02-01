@@ -13,9 +13,9 @@ vec3 getLight(vec3 col) {
     vec3 lightCol = vec3(1.);
 
     vec3 newPos = u_lightpos;
-    // newPos.x = 0.;
-    // newPos.y = cos(u_time*0.2)*10.;
-    // newPos.z = sin(u_time*0.2)*10.;
+    newPos.x = 0.;
+    newPos.y = cos(u_time*0.2)*10.;
+    newPos.z = sin(u_time*0.2)*10.;
 
     // ambient lighting
     float ambientFactor = 0.;
@@ -32,7 +32,7 @@ vec3 getLight(vec3 col) {
     vec3 viewRay = normalize(u_camera - fragPos);
     //vec3 reflectDir = normalize(lightRay - 2*n*dot(lightRay, n));
     vec3 reflectDir = reflect(-lightRay, n);
-    result = pow(max(dot(viewRay, reflectDir), 0.), 128);
+    result = pow(max(dot(viewRay, reflectDir), 0.), 32);
     vec3 specular = specularFactor * result * lightCol;
 
     return col*(ambient + specular + diffuse);
