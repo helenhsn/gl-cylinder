@@ -54,8 +54,6 @@ impl Camera {
 
     pub fn process_keyboard(&mut self, dir: Direction, d_time: f32) {
         let velocity: f32 = self.camera_speed * d_time;
-        println!("fwd = {:?} && rgt = {:?}", self.fwd, self.rgt);
-        println!("ro = {:?}", self.ro);
         self.ro += match dir {
             Direction::FWD => self.fwd * velocity,
             Direction::BWD => -self.fwd * velocity,
